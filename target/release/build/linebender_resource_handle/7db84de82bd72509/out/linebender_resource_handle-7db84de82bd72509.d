@@ -1,0 +1,9 @@
+/Users/craigjohnson/Downloads/iron-room-soniclaw/target/release/build/linebender_resource_handle/7db84de82bd72509/out/linebender_resource_handle-7db84de82bd72509.d: /Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/linebender_resource_handle-0.1.1/src/lib.rs /Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/linebender_resource_handle-0.1.1/src/blob.rs /Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/linebender_resource_handle-0.1.1/src/font.rs
+
+/Users/craigjohnson/Downloads/iron-room-soniclaw/target/release/build/linebender_resource_handle/7db84de82bd72509/out/liblinebender_resource_handle-7db84de82bd72509.rlib: /Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/linebender_resource_handle-0.1.1/src/lib.rs /Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/linebender_resource_handle-0.1.1/src/blob.rs /Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/linebender_resource_handle-0.1.1/src/font.rs
+
+/Users/craigjohnson/Downloads/iron-room-soniclaw/target/release/build/linebender_resource_handle/7db84de82bd72509/out/liblinebender_resource_handle-7db84de82bd72509.rmeta: /Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/linebender_resource_handle-0.1.1/src/lib.rs /Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/linebender_resource_handle-0.1.1/src/blob.rs /Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/linebender_resource_handle-0.1.1/src/font.rs
+
+/Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/linebender_resource_handle-0.1.1/src/lib.rs:
+/Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/linebender_resource_handle-0.1.1/src/blob.rs:
+/Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/linebender_resource_handle-0.1.1/src/font.rs:

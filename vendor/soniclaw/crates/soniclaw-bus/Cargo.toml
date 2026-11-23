@@ -1,0 +1,16 @@
+[package]
+name = "soniclaw-bus"
+description = "Separate input/output and sidechain processing layouts"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+[dependencies]
+serde = {version="1",features=["derive"]}
+soniclaw-core.workspace = true
+soniclaw-engine.workspace = true
+[lints]
+workspace = true
+
+[dev-dependencies]
+allocation-counter="=0.8.1"

@@ -1,0 +1,45 @@
+   Compiling iron-room-soniclaw v0.1.0 (/workspace/scratch/3c75e810ea40/iron-room-soniclaw)
+warning: unused dependency `soniclaw-engine`
+  --> Cargo.toml:20:1
+   |
+20 | soniclaw-engine = { path = "vendor/soniclaw/crates/soniclaw-engine" }
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: `cargo::unused_dependencies` is set to `warn` by default
+help: consider removing the dependency on `soniclaw-engine`
+warning: `iron-room-soniclaw` (manifest) generated 1 warning
+    Finished `test` profile [unoptimized] target(s) in 4.11s
+     Running unittests src/lib.rs (iron-room-soniclaw/target/debug/build/iron-room-soniclaw/e2e5b1707c64f689/out/iron_room_soniclaw-e2e5b1707c64f689)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (iron-room-soniclaw/target/debug/build/iron-room-soniclaw/199e86fc09acfaea/out/iron_room-199e86fc09acfaea)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/audio_workflows.rs (iron-room-soniclaw/target/debug/build/iron-room-soniclaw/bc153ce336999e98/out/audio_workflows-bc153ce336999e98)
+
+running 10 tests
+test cancelled_export_removes_only_its_new_output ... ok
+test factory_content_decodes_all_original_recordings ... ok
+test fractional_grooves_are_partition_invariant_through_loop_boundaries ... ok
+test host_midi_offsets_and_hat_choking_reach_soniclaw_voices ... ok
+test mute_and_solo_are_applied_before_room_and_parallel ... ok
+test portable_custom_velocity_round_robins_use_embedded_audio ... ok
+test prepared_audio_and_schedule_retirement_allocate_nothing ... ok
+test project_portability_and_validation_preserve_previous_file ... ok
+test song_arrangement_and_midi_keep_odd_meter_and_fractional_timing ... ok
+test wav_export_is_finite_has_expected_duration_and_refuses_overwrite ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 92.55s
+
+   Doc-tests iron_room_soniclaw
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

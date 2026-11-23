@@ -1,0 +1,20 @@
+{
+  "version": "0.1.0",
+  "framework": "Soniclaw 0.144.0",
+  "binary_sha256": "6dafb317c16ddd08b87dda0cec5fd7078f2a31235ef00403cf845cc450b40090",
+  "binary_bytes": 17858112,
+  "platform": "Linux x86_64",
+  "source_inputs": {
+    "Soniclaw": "1372e74a4bdaa1f5c67778a17020c33378e785a8aabd887904cfe155e148e3af",
+    "Iron Room native v0.3.0": "4eba1014cf38882132d1363c113d67bfea6056a9af29479bc6f1ef1ac94853a5"
+  },
+  "application_source": {
+    "src/app.rs": "f1645118e471edfc3d4ada11d415ba52658ee24d7735bc89b68d91dda6a421ec",
+    "src/content.rs": "e27af4f48ed8d04d9ca1490c1d5a022d8884ea12f847a87c6bb21452db7533fb",
+    "src/engine.rs": "e9584a5bcc05d52d335460780921268dfb9211ff5686a4fcc0d0464c6ca6eb9d",
+    "src/export.rs": "46806d5e90ac153c7b44b80aaede3cf4a4e2940d88bae8decd19f1f5fbbc6345",
+    "src/lib.rs": "9d410b3a4794245b6d57ea9549fa3d4326bb90c647dee4af42f7accc96d11a23",
+    "src/main.rs": "5ac716a28759c7f9df204bf2c56c76c7a4dd156373389817250e1115765f05bc",
+    "src/model.rs": "a09154ebd188e459a0733048aef29cff3faa4d781467e77b4c086ae6ebac1406"
+  }
+}

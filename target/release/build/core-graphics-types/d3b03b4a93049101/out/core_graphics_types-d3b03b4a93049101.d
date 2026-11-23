@@ -1,0 +1,9 @@
+/Users/craigjohnson/Downloads/iron-room-soniclaw/target/release/build/core-graphics-types/d3b03b4a93049101/out/core_graphics_types-d3b03b4a93049101.d: /Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/core-graphics-types-0.1.3/src/lib.rs /Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/core-graphics-types-0.1.3/src/base.rs /Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/core-graphics-types-0.1.3/src/geometry.rs
+
+/Users/craigjohnson/Downloads/iron-room-soniclaw/target/release/build/core-graphics-types/d3b03b4a93049101/out/libcore_graphics_types-d3b03b4a93049101.rlib: /Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/core-graphics-types-0.1.3/src/lib.rs /Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/core-graphics-types-0.1.3/src/base.rs /Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/core-graphics-types-0.1.3/src/geometry.rs
+
+/Users/craigjohnson/Downloads/iron-room-soniclaw/target/release/build/core-graphics-types/d3b03b4a93049101/out/libcore_graphics_types-d3b03b4a93049101.rmeta: /Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/core-graphics-types-0.1.3/src/lib.rs /Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/core-graphics-types-0.1.3/src/base.rs /Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/core-graphics-types-0.1.3/src/geometry.rs
+
+/Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/core-graphics-types-0.1.3/src/lib.rs:
+/Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/core-graphics-types-0.1.3/src/base.rs:
+/Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/core-graphics-types-0.1.3/src/geometry.rs:

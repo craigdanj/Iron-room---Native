@@ -1,0 +1,16 @@
+/target/
+/soniclaw-ci-app/
+*.wav
+*.preset.json
+/soniclaw-v2-*/
+/soniclaw-ci-*/
+/dist/
+soniclaw-session.json
+
+/build/
+/vendor/
+/dist/
+**/target/
+__pycache__/
+
+/validation-local/

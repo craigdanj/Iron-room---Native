@@ -1,0 +1,12 @@
+/Users/craigjohnson/Downloads/iron-room-soniclaw/target/release/build/unicode-general-category/e66537210071dd68/out/unicode_general_category-e66537210071dd68.d: /Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/unicode-general-category-1.1.0/src/lib.rs /Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/unicode-general-category-1.1.0/src/category.rs /Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/unicode-general-category-1.1.0/src/tables.rs /Users/craigjohnson/Downloads/iron-room-soniclaw/target/release/build/unicode-general-category/212539cbe230411c/out/category.rs
+
+/Users/craigjohnson/Downloads/iron-room-soniclaw/target/release/build/unicode-general-category/e66537210071dd68/out/libunicode_general_category-e66537210071dd68.rlib: /Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/unicode-general-category-1.1.0/src/lib.rs /Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/unicode-general-category-1.1.0/src/category.rs /Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/unicode-general-category-1.1.0/src/tables.rs /Users/craigjohnson/Downloads/iron-room-soniclaw/target/release/build/unicode-general-category/212539cbe230411c/out/category.rs
+
+/Users/craigjohnson/Downloads/iron-room-soniclaw/target/release/build/unicode-general-category/e66537210071dd68/out/libunicode_general_category-e66537210071dd68.rmeta: /Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/unicode-general-category-1.1.0/src/lib.rs /Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/unicode-general-category-1.1.0/src/category.rs /Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/unicode-general-category-1.1.0/src/tables.rs /Users/craigjohnson/Downloads/iron-room-soniclaw/target/release/build/unicode-general-category/212539cbe230411c/out/category.rs
+
+/Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/unicode-general-category-1.1.0/src/lib.rs:
+/Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/unicode-general-category-1.1.0/src/category.rs:
+/Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/unicode-general-category-1.1.0/src/tables.rs:
+/Users/craigjohnson/Downloads/iron-room-soniclaw/target/release/build/unicode-general-category/212539cbe230411c/out/category.rs:
+
+# env-dep:OUT_DIR=/Users/craigjohnson/Downloads/iron-room-soniclaw/target/release/build/unicode-general-category/212539cbe230411c/out

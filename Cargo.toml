@@ -1,0 +1,41 @@
+[package]
+name = "iron-room-soniclaw"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.100"
+license = "MIT"
+description = "Iron Room acoustic drum studio, powered by Soniclaw"
+
+[workspace]
+exclude = ["vendor/soniclaw"]
+
+[features]
+default = ["desktop"]
+desktop = ["dep:eframe", "dep:rfd", "dep:soniclaw-device", "soniclaw-midi/native"]
+
+[dependencies]
+soniclaw-core = { path = "vendor/soniclaw/crates/soniclaw-core" }
+soniclaw-dsp = { path = "vendor/soniclaw/crates/soniclaw-dsp" }
+soniclaw-sampler = { path = "vendor/soniclaw/crates/soniclaw-sampler" }
+soniclaw-engine = { path = "vendor/soniclaw/crates/soniclaw-engine" }
+soniclaw-device = { path = "vendor/soniclaw/crates/soniclaw-device", optional = true }
+soniclaw-midi = { path = "vendor/soniclaw/crates/soniclaw-midi" }
+eframe = { version = "=0.36.1", default-features = false, features = ["accesskit", "glow", "x11", "default_fonts"], optional = true }
+rfd = { version = "=0.15.4", default-features = false, features = ["xdg-portal", "async-std"], optional = true }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+symphonia = { version = "=0.5.5", default-features = false, features = ["mp3", "wav", "pcm", "flac", "aiff"] }
+hound = "=3.5.1"
+rtrb = "=0.3.5"
+base64 = "=0.22.1"
+
+[dev-dependencies]
+allocation-counter = "=0.8.1"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+
+[[bin]]
+name = "iron-room"
+path = "src/main.rs"

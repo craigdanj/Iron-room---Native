@@ -1,0 +1,70 @@
+name: Native release evidence
+on:
+  workflow_dispatch:
+  push:
+    tags: ['v*']
+permissions:
+  contents: read
+jobs:
+  formats:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@1.100.0
+        with:
+          components: rustfmt, clippy
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Linux native prerequisites
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y libasound2-dev pkg-config libx11-dev libx11-xcb-dev libxcb1-dev libxcursor-dev libxi-dev libxrandr-dev libxinerama-dev libgl1-mesa-dev libwayland-dev libxkbcommon-dev libegl1-mesa-dev
+      - name: Validate source and Rust/Python contracts
+        run: python tools/compatibility-suite.py --full --output release-evidence --timeout 900
+      - name: Audio quality regression probes
+        run: cargo run -p soniclaw-quality-suite --locked -- release-evidence/audio-quality
+      - name: Build native exports from pinned SDKs
+        shell: bash
+        run: |
+          args=(--fetch --no-editor)
+          if [[ "$RUNNER_OS" == "macOS" ]]; then args+=(--au); fi
+          if [[ "$RUNNER_OS" == "Linux" ]]; then args+=(--protocol-fixture); fi
+          python tools/build-formats.py "${args[@]}"
+      - name: Build native host acceptance executables
+        run: cargo build -p soniclaw-sdk-tools -p soniclaw-musical-host -p soniclaw-crash-host -p soniclaw-isolation-helper --features soniclaw-sdk-tools/vst3-tools --locked
+      - name: Native VST3 audio/state/MIDI acceptance
+        shell: bash
+        run: target/debug/soniclaw-sdk-tools --vst3-demo build/formats/Release/SoniclawReference.vst3 release-evidence/native-vst3
+      - name: Independent native protocol and isolation fault acceptance
+        if: runner.os == 'Linux'
+        shell: bash
+        run: |
+          ulimit -c 0
+          target/debug/soniclaw-musical-host build/formats/fixtures/HostProtocolFixture.vst3 release-evidence/native-musical
+          target/debug/soniclaw-crash-host target/debug/vst3-host-helper build/formats/Release/SoniclawReference.vst3 build/formats/fixtures/HostProtocolFixture.vst3 release-evidence/native-isolation
+      - name: Collect notices, stage and audit release
+        shell: bash
+        run: |
+          python tools/collect-licenses.py --output release-licenses --format-deps vendor/formats
+          python - <<'PY'
+          import pathlib,platform,subprocess,sys,tomllib
+          root=pathlib.Path('.')
+          version=tomllib.loads((root/'Cargo.toml').read_text())['workspace']['package']['version']
+          subprocess.run([sys.executable,'tools/package-release.py','build/formats/Release/SoniclawReference.vst3','--output','release-stage','--version',version,'--licenses','release-licenses'],check=True)
+          stage=next(p for p in pathlib.Path('release-stage').iterdir()if p.is_dir())
+          target={'win32':'windows','darwin':'macos'}.get(sys.platform,sys.platform)
+          arch={'AMD64':'x86_64','arm64':'aarch64'}.get(platform.machine(),platform.machine())
+          subprocess.run([sys.executable,'tools/release-gate.py',str(stage),'--platform',target,'--architecture',arch,'--report','release-evidence/package-audit.json'],check=True)
+          PY
+      - name: Retain packages and exact evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: native-release-${{ matrix.os }}
+          path: |
+            release-evidence
+            release-stage/*.zip

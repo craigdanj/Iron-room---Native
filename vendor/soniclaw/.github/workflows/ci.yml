@@ -1,0 +1,86 @@
+name: Soniclaw checks
+on: [push, pull_request]
+jobs:
+  native:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+      - name: Linux native prerequisites
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y libasound2-dev pkg-config libx11-dev libx11-xcb-dev libxcb1-dev libxcursor-dev libxi-dev libxrandr-dev libxinerama-dev libgl1-mesa-dev libxcb-dri2-0-dev libxcb-icccm4-dev libwayland-dev libxkbcommon-dev libegl1-mesa-dev
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compatibility suite (structured evidence)
+        run: python tools/compatibility-suite.py --full --output compatibility-report --timeout 900
+      - name: Retain compatibility evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: compatibility-${{ matrix.os }}
+          path: compatibility-report
+      - run: cargo run -p soniclaw-render --locked -- soniclaw-ci.wav
+      - run: cargo run -p cargo-soniclaw --locked -- new soniclaw-ci-app
+      - run: cargo check --manifest-path soniclaw-ci-app/Cargo.toml
+      - run: cargo build -p soniclaw-clap-demo --locked
+      - run: cargo run -p soniclaw-clap-smoke --locked
+      - run: cargo run -p cargo-soniclaw --locked -- new soniclaw-ci-effect --kind clap
+      - run: cargo build --manifest-path soniclaw-ci-effect/Cargo.toml
+      - run: cargo build -p soniclaw-reference --release --locked
+      - run: cargo run -p cargo-soniclaw --locked -- new soniclaw-ci-sampler --kind sampler
+      - run: cargo build --manifest-path soniclaw-ci-sampler/Cargo.toml
+      - run: cargo run -p soniclaw-reference-studio --locked -- --render soniclaw-drums-ci.wav
+      - run: cargo build -p soniclaw-project-plugin --locked
+      - name: Project Rack exported state check
+        shell: bash
+        run: |
+          case "$RUNNER_OS" in
+            Windows) plugin="target/debug/soniclaw_project_plugin.dll" ;;
+            macOS) plugin="target/debug/libsoniclaw_project_plugin.dylib" ;;
+            *) plugin="target/debug/libsoniclaw_project_plugin.so" ;;
+          esac
+          cargo run -p soniclaw-clap-smoke --locked -- "$plugin" --project
+      - run: cargo run -p soniclaw-ecosystem --locked -- soniclaw-ci-ecosystem
+      - run: cargo build -p soniclaw-dsp-lab --locked
+      - name: DSP Lab exported state and latency check
+        shell: bash
+        run: |
+          case "$RUNNER_OS" in
+            Windows) plugin="target/debug/soniclaw_dsp_lab.dll" ;;
+            macOS) plugin="target/debug/libsoniclaw_dsp_lab.dylib" ;;
+            *) plugin="target/debug/libsoniclaw_dsp_lab.so" ;;
+          esac
+          cargo run -p soniclaw-clap-smoke --locked -- "$plugin" --dsp
+      - run: cargo run -p soniclaw-dsp-lab --locked -- soniclaw-ci-dsp-lab
+      - run: cargo build -p soniclaw-workbench --locked
+      - name: Workbench exported state and latency check
+        shell: bash
+        run: |
+          case "$RUNNER_OS" in
+            Windows) plugin="target/debug/soniclaw_workbench.dll" ;;
+            macOS) plugin="target/debug/libsoniclaw_workbench.dylib" ;;
+            *) plugin="target/debug/libsoniclaw_workbench.so" ;;
+          esac
+          cargo run -p soniclaw-clap-smoke --locked -- "$plugin" --workbench
+      - run: cargo run -p soniclaw-workbench --no-default-features --locked -- --render soniclaw-ci-workbench
+      - run: cargo run -p soniclaw-sdk-tools --locked -- --registry-demo soniclaw-ci-registry
+      - run: cargo run -p soniclaw-sdk-tools --locked -- --workflow-demo soniclaw-ci-workflow
+      - run: cargo run -p soniclaw-sdk-tools --locked -- --demo soniclaw-ci-sdk
+      - run: cargo run -p soniclaw-sdk-tools --locked -- --audit soniclaw-ci-audit.json
+      - run: cargo build -p soniclaw-host-fixture --locked
+      - name: Independent CLAP host lifecycle and event contract
+        shell: bash
+        run: |
+          case "$RUNNER_OS" in
+            Windows) plugin="target/debug/soniclaw_host_fixture.dll" ;;
+            macOS) plugin="target/debug/libsoniclaw_host_fixture.dylib" ;;
+            *) plugin="target/debug/libsoniclaw_host_fixture.so" ;;
+          esac
+          cargo run -p soniclaw-sdk-tools --locked -- --host-contract "$plugin" soniclaw-ci-host.json

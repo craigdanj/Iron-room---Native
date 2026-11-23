@@ -1,0 +1,9 @@
+/Users/craigjohnson/Downloads/iron-room-soniclaw/target/release/build/accesskit_winit/416b7e1f324ea959/out/accesskit_winit-416b7e1f324ea959.d: /Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/accesskit_winit-0.32.2/src/lib.rs /Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/accesskit_winit-0.32.2/src/platform_impl/mod.rs /Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/accesskit_winit-0.32.2/src/platform_impl/macos.rs
+
+/Users/craigjohnson/Downloads/iron-room-soniclaw/target/release/build/accesskit_winit/416b7e1f324ea959/out/libaccesskit_winit-416b7e1f324ea959.rlib: /Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/accesskit_winit-0.32.2/src/lib.rs /Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/accesskit_winit-0.32.2/src/platform_impl/mod.rs /Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/accesskit_winit-0.32.2/src/platform_impl/macos.rs
+
+/Users/craigjohnson/Downloads/iron-room-soniclaw/target/release/build/accesskit_winit/416b7e1f324ea959/out/libaccesskit_winit-416b7e1f324ea959.rmeta: /Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/accesskit_winit-0.32.2/src/lib.rs /Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/accesskit_winit-0.32.2/src/platform_impl/mod.rs /Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/accesskit_winit-0.32.2/src/platform_impl/macos.rs
+
+/Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/accesskit_winit-0.32.2/src/lib.rs:
+/Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/accesskit_winit-0.32.2/src/platform_impl/mod.rs:
+/Users/craigjohnson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/accesskit_winit-0.32.2/src/platform_impl/macos.rs:

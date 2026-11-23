@@ -1,0 +1,19 @@
+[package]
+name = "soniclaw-stream"
+description = "Bounded background WAV streaming with explicit underrun telemetry"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+[dependencies]
+soniclaw-clips={path="../soniclaw-clips",version="0.144.0"}
+serde={version="1",features=["derive"]}
+soniclaw-core.workspace = true
+soniclaw-dsp.workspace = true
+hound = "=3.5.1"
+rtrb = "=0.3.5"
+[lints]
+workspace = true
+
+[dev-dependencies]
+allocation-counter="=0.8.1"

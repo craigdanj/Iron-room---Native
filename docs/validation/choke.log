@@ -1,0 +1,21 @@
+   Compiling iron-room-soniclaw v0.1.0 (/workspace/scratch/3c75e810ea40/iron-room-soniclaw)
+    Finished `test` profile [unoptimized] target(s) in 2.29s
+     Running unittests src/lib.rs (iron-room-soniclaw/target/debug/build/iron-room-soniclaw/e2e5b1707c64f689/out/iron_room_soniclaw-e2e5b1707c64f689)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (iron-room-soniclaw/target/debug/build/iron-room-soniclaw/199e86fc09acfaea/out/iron_room-199e86fc09acfaea)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/audio_workflows.rs (iron-room-soniclaw/target/debug/build/iron-room-soniclaw/bc153ce336999e98/out/audio_workflows-bc153ce336999e98)
+
+running 1 test
+test host_midi_offsets_and_hat_choking_reach_soniclaw_voices ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 9 filtered out; finished in 0.66s
+

@@ -1,0 +1,1 @@
+{"$message_type":"unused_extern","lint_level":"force-warn","unused_extern_names":["base64","hound","rfd","rtrb","serde","soniclaw_core","soniclaw_device","soniclaw_dsp","soniclaw_engine","soniclaw_midi","soniclaw_sampler","symphonia"]}

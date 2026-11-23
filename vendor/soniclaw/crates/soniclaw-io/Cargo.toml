@@ -1,0 +1,12 @@
+[package]
+name = "soniclaw-io"
+description = "Offline WAV file import and export"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+[dependencies]
+soniclaw-dsp.workspace = true
+hound = "=3.5.1"
+[lints]
+workspace = true
